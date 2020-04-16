@@ -2,6 +2,10 @@ const path = require('path');
 const express = require("express");
 const morgan = require("morgan");
 
+const userRouter = require('./routes/userRoutes');
+const questionRouter = require('./routes/questionRoutes');
+const recordRouter = require('./routes/recordRoutes');
+
 const app = express();
 
 // Development logging
@@ -14,6 +18,10 @@ app.use(express.json({
 }));
 
 // ROUTES
+// app.use('/api/users', userRouter);
+// app.use('/api/questions', questionRouter);
+// app.use('/api/records', recordRouter);
+
 
 app.all('*', (req, res, next) => {
     res.status(404).json({
