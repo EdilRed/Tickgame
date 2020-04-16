@@ -10,7 +10,7 @@ const app = require('./app');
 const SERVER_PORT = process.env.PORT || 6000;
 const MONGODB_URI = process.env.DATABASE;
 const MONGODB_OPTIONS = {
-    dbName: 'Chat-app',
+    dbName: 'Tickgame',
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
