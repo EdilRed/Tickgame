@@ -87,6 +87,20 @@ exports.getQuestion = async (req, res, next) => {
   }
 };
 
+exports.deleteAllQuestions = async (req, res, next) => {
+  try {
+    await Question.deleteMany();
+
+    res.status(204).json();
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: err.messag,
+    });
+    throw new Error(err.message);
+  }
+};
+
 exports.shuffleQuestion = async (req, res, next) => {
   try {
     const category = req.params.category;

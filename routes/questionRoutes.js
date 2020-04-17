@@ -4,15 +4,15 @@ const questionController = require('../controllers/questionController');
 const router = express.Router();
 
 router
-  .route('/')
-  .post(questionController.createQuestion)
-  .get(questionController.getAllQuestions)
-  .delete(deleteAllQuestions);
+    .route('/')
+    .post(questionController.createQuestion)
+    .get(questionController.getAllQuestions)
+    .delete(questionController.deleteAllQuestions);
 
 router
-  .route('/:id')
-  .post('/:id', questionController.correctAnswer)
-  .delete(questionController.deleteQuestion);
+    .route('/:id')
+    .post(questionController.correctAnswer)
+    .delete(questionController.deleteQuestion);
 
 router.get('/shuffle', questionController.shuffleQuestion);
 
