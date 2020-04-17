@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Question = require('../models/questionModel');
 const Record = require('../models/recordModel');
+const User = require('../models/userModel');
 
 dotenv.config({
   path: './config.env',
@@ -43,6 +44,7 @@ const importData = async () => {
       addedCoin: 100,
       totalCoin: 100,
     });
+    await User.create({ name: 'admin' });
     console.log('Data successfully loaded!');
   } catch (err) {
     console.log(err);
@@ -55,6 +57,7 @@ const deleteData = async () => {
   try {
     await Record.deleteMany();
     await Question.deleteMany();
+    await User.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);

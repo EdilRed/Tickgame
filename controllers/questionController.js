@@ -72,7 +72,7 @@ exports.getQuestion = async (req, res, next) => {
   try {
     const id = req.params.id;
 
-    const question = Question.findById(id);
+    const question = await Question.findById(id);
 
     res.status(200).json({
       status: 'success',
@@ -103,7 +103,7 @@ exports.deleteAllQuestions = async (req, res, next) => {
 
 exports.shuffleQuestion = async (req, res, next) => {
   try {
-    const category = req.params.category;
+    const { category } = req.body;
 
     const questions = await Question.find({ category });
 
@@ -134,7 +134,24 @@ exports.correctAnswer = async (req, res, next) => {
 
     const user = await User.findOne({ name });
 
+    if (!user) {
+      res.status(400).json({
+        status: 'fail',
+        message: 'Not found user with that name.',
+      });
+      throw new Error('Not found user with that name.');
+    }
+
     const question = await Question.findById(id);
+
+    if (!question) {
+      res.status(400).json({
+        status: 'fail',
+        message: 'Not found question with that id.',
+      });
+      throw new Error('Not found question with that id.');
+    }
+
     if (question.correctAnswer === parseInt(answer)) {
       const record = await Record.find();
       const lastRecord = record[record.length - 1];
