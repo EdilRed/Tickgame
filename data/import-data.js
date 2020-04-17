@@ -38,10 +38,10 @@ const importData = async () => {
   try {
     await Question.create(questions);
     await Record.create({
-        fromQuestion: '1',
-        fromUser: '1',
-        addedCoin = 100,
-        totalCoin = 100
+      fromQuestion: '5c88fa8cf4afda39709c2955',
+      fromUser: '5c88fa8cf4afda39709c2956',
+      addedCoin: 100,
+      totalCoin: 100,
     });
     console.log('Data successfully loaded!');
   } catch (err) {

@@ -135,7 +135,7 @@ exports.correctAnswer = async (req, res, next) => {
     const user = await User.findOne({ name });
 
     const question = await Question.findById(id);
-    if (question.correctAnswer === answer) {
+    if (question.correctAnswer === parseInt(answer)) {
       const record = await Record.find();
       const lastRecord = record[record.length - 1];
 
