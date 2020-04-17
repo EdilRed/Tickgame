@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "debug": "ndb server.js"
+    "debug": "ndb server.js",
+    "import": "node /data/import-data.js --import",
+    "delete": "node /data/import-data.js --delete"
   },
   "author": "Wisarut Tiyamanee",
   "license": "ISC",
