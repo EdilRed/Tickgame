@@ -105,24 +105,15 @@ exports.deleteAllQuestions = async (req, res, next) => {
 exports.shuffleQuestion = async (req, res, next) => {
   try {
     const slug = req.params.slug;
-    let category = '';
-
-    if (slug === 'healthy-eating') {
-      category = 'Healthy Eating'
-    } else if (slug === 'english-vocabulary') {
-      category = 'English Vocabulary'
-    } else if (slug === 'climate-action') {
-      category = 'Climate Action';
-    };
 
     const questions = await Question.find({
-      category
+      slug,
     });
 
     if (questions.length < 1) {
       res.status(204).json();
       return next();
-    };
+    }
 
     const index = getRandomInt(0, questions.length);
 
@@ -142,13 +133,10 @@ exports.shuffleQuestion = async (req, res, next) => {
 exports.correctAnswer = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const {
-      name,
-      answer
-    } = req.body;
+    const { name, answer } = req.body;
 
     const user = await User.findOne({
-      name
+      name,
     });
 
     if (!user) {
@@ -185,6 +173,7 @@ exports.correctAnswer = async (req, res, next) => {
         status: 'correct',
       });
     } else {
+      console.log('Incorrect Answer');
       res.status(200).json({
         status: 'incorrect',
       });

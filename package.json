@@ -13,13 +13,15 @@
   "author": "Wisarut Tiyamanee",
   "license": "ISC",
   "dependencies": {
+    "alert-node": "^3.0.11",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "slugify": "^1.4.0"
   },
   "devDependencies": {
     "prettier": "^2.0.4"

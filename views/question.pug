@@ -1,8 +1,10 @@
 extends base
 
 block content
+    span= `Category: ${question.category}`
     h2= question.question
-    h3= question.answers[0]
-    h3= question.answers[1]
-    h3= question.answers[2]
-    h3= question.answers[3]
+    .card-columns.center
+        each answer, i in question.answers
+            a.card.border-info.text-center(href=`/${question._id}/${i}`)
+                .card-body
+                    h5.card-subtitle= answer

@@ -9,7 +9,7 @@ html(lang="en")
     link(rel="stylesheet" href="css/style.css")
   body
     .wrapper.d-flex.align-items-stretch
-      nav#sidebar.active
+      nav#sidebar
         .custom-menu
           button#sidebarCollapse.btn.btn-primary(type="button")
             i.fa.fa-bars
@@ -19,7 +19,7 @@ html(lang="en")
             a.logo(href="/") Tickgame
           ul.list-unstyled.components.mb-5
             li.active
-              a.dropdown-toggle(href="#homeSubmenu" data-toggle="collapse" aria-expanded="true") Category
+              a.dropdown-toggle(href="#homeSubmenu" data-toggle="collapse" aria-expanded="true") Categories
               ul#homeSubmenu.collapse.list-unstyled.show
                 li
                   a(href="/healthy-eating") Healthy Eating
@@ -31,11 +31,11 @@ html(lang="en")
               a(href="#") Logout
           .footer
             p
-              // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
-              | Copyright ©
-              script.
-                document.write(new Date().getFullYear());
-              |  All rights reserved | Wisarut Tiyamanee
+              | Mini project for presentation to Cloud Computing Course. Made by Wisarut Tiyamanee
+            //-   | Copyright ©
+            //-   script.
+            //-     document.write(new Date().getFullYear());
+            //-   |  All rights reserved | Wisarut Tiyamanee
       // Page Content
       #content.p-4.p-md-5.pt-5
         h3.mb-4= 'Total Coin: ' + coin.totalCoin
