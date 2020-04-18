@@ -44,7 +44,9 @@ const importData = async () => {
       addedCoin: 100,
       totalCoin: 100,
     });
-    await User.create({ name: 'admin' });
+    await User.create({
+      name: 'admin'
+    });
     console.log('Data successfully loaded!');
   } catch (err) {
     console.log(err);

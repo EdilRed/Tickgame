@@ -21,18 +21,29 @@ exports.getAllUsers = async (req, res, next) => {
 exports.login = async (req, res, next) => {
   try {
     const { name } = req.body;
-    const findUser = await User.find({ name });
+    const findUser = await User.findOne({
+      name,
+    });
     let user;
 
     if (findUser) {
       user = await User.findOneAndUpdate(
-        { name },
-        { loggedInAt: Date.now(), active: true },
-        { new: true }
+        {
+          name,
+        },
+        {
+          loggedInAt: Date.now(),
+          active: true,
+        },
+        {
+          new: true,
+        }
       );
       console.log('Existing user. Logging in...');
     } else {
-      user = await User.create({ name });
+      user = await User.create({
+        name,
+      });
       console.log('Not found this user, Created new user and logging in...');
     }
 
@@ -53,7 +64,14 @@ exports.logout = async (req, res, next) => {
   try {
     const { name } = req.body;
 
-    const user = await User.findOneAndUpdate({ name }, { active: false });
+    const user = await User.findOneAndUpdate(
+      {
+        name,
+      },
+      {
+        active: false,
+      }
+    );
 
     if (!user) {
       res.status(400).json({
@@ -78,7 +96,9 @@ exports.logout = async (req, res, next) => {
 exports.deleteAllUsers = async (req, res, next) => {
   try {
     const { name } = req.body;
-    const user = await User.findOneAndDelete({ name });
+    const user = await User.findOneAndDelete({
+      name,
+    });
 
     if (!user) {
       res.status(400).json({

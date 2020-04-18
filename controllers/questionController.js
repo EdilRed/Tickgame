@@ -14,6 +14,7 @@ exports.getAllQuestions = async (req, res, next) => {
 
     res.status(200).json({
       status: 'success',
+      results: questions.length,
       data: questions,
     });
   } catch (err) {
@@ -103,14 +104,18 @@ exports.deleteAllQuestions = async (req, res, next) => {
 
 exports.shuffleQuestion = async (req, res, next) => {
   try {
-    const { category } = req.body;
+    const {
+      category
+    } = req.body;
 
-    const questions = await Question.find({ category });
+    const questions = await Question.find({
+      category
+    });
 
     if (questions.length < 1) {
       res.status(204).json();
       return next();
-    }
+    };
 
     const index = getRandomInt(0, questions.length);
 
@@ -130,9 +135,14 @@ exports.shuffleQuestion = async (req, res, next) => {
 exports.correctAnswer = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const { name, answer } = req.body;
+    const {
+      name,
+      answer
+    } = req.body;
 
-    const user = await User.findOne({ name });
+    const user = await User.findOne({
+      name
+    });
 
     if (!user) {
       res.status(400).json({
