@@ -1,5 +1,4 @@
-[
-  {
+[{
     "category": "English Vocabulary",
     "question": "partner means:",
     "answers": ["thanks", "penny", "kettle", "associate"],
@@ -233,5 +232,102 @@
       "fortified blended foods"
     ],
     "correctAnswer": 1
+  },
+  {
+    "category": "Coronavirus",
+    "question": "Where should you follow health advice from?",
+    "answers": [
+      "Rumours that you see on social networking sites or sent to you via chat",
+      "Your local health authority and the World Health Organization"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "category": "Coronavirus",
+    "question": "Should you wash your hands after coughing or sneezing?",
+    "answers": [
+      "Always. Frequent handwashing is one of the most effective ways to avoid infection.",
+      "No, it doesn't matter."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Coronavirus",
+    "question": "What does 'self-isolation' mean?",
+    "answers": [
+      "Staying at home and not leaving for 14 days to avoid spreading contagion to others",
+      "When you feel mentally isolated",
+      "When you're in a place without that many people"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Coronavirus",
+    "question": "If I hear a crazy rumour about the coronavirus, should I let others know?",
+    "answers": [
+      "No. Spreading rumours can create panic, anxiety, or misinformation. Always check sources.",
+      "Yes. It's important to tell everyone what I've heard, even if I don't know the source."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Coronavirus",
+    "question": "If you have a family member or friend in self-isolation, it's important to:",
+    "answers": [
+      "Check in with them regularly via phone or email to make sure they're ok",
+      "Ignore them",
+      "Frequently visit them in person",
+      "Stigmatize them in case they are sick"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Coronavirus",
+    "question": "Don't touch your ______ to better protect yourself from the new coronavirus.",
+    "answers": [
+      "Pockets",
+      "Eyes, nose, and mouth",
+      "Ears and shoulders",
+      "Feet"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "category": "Coronavirus",
+    "question": "If you use a tissue when you cough or sneeze, what should you do with it after?",
+    "answers": [
+      "You can re-use it, it's fine.",
+      "Throw it away immediately. Never re-use soiled tissues. Wash hands as soon as you can."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "category": "Coronavirus",
+    "question": "What is the minimum distance you should maintain during 'social distancing'?",
+    "answers": [
+      "At least one meter (three feet)",
+      "It doesn't matter",
+      "Half a meter"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Coronavirus",
+    "question": "Spitting in public is fine, even during a COVID-19 outbreak.",
+    "answers": [
+      "Yes. There is no risk if people spit in public.",
+      "No. Saliva is one of the ways contagion is spread, and spitting should be avoided."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "category": "Coronavirus",
+    "question": "What are the most common symptoms of COVID-19?",
+    "answers": [
+      "Numbness in toes",
+      "Ringing in ears",
+      "Fever, cough, and difficulty breathing"
+    ],
+    "correctAnswer": 2
   }
 ]

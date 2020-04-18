@@ -17,3 +17,16 @@
 	});
 
 })(jQuery);
+
+// const loginForm = document.querySelector('.form--login');
+
+// if (loginForm) {
+
+// 	loginForm.addEventListener('submit', e => {
+// 		// e.preventDefault();
+// 		const name = document.getElementById('email').value;
+// 		console.log(name);
+
+// 		// login(email, password);
+// 	});
+// };

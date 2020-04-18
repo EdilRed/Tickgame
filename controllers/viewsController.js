@@ -15,10 +15,17 @@ exports.getOverview = async (req, res, next) => {
     }
 };
 
-exports.getLoginForm = (req, res) => {
-    res.status(200).render('base', {
-        title: 'Log into your account',
-    });
+exports.getLoginForm = async (req, res, next) => {
+    try {
+        const records = await Record.find();
+        const coin = records[records.length - 1];
+        res.status(200).render('login', {
+            coin,
+        });
+    } catch (err) {
+        throw new Error(err.message);
+    }
+
 };
 
 exports.getQuestion = async (req, res, next) => {
@@ -79,21 +86,23 @@ exports.getCorrectAnswer = async (req, res, next) => {
 
         let question = await Question.findById(qid);
 
-        findUrl =
-            req.protocol +
-            '://' +
-            req.get('host') +
-            '/api/questions/shuffle/' +
-            question.slug;
+        if (question) {
+            findUrl =
+                req.protocol +
+                '://' +
+                req.get('host') +
+                '/api/questions/shuffle/' +
+                question.slug;
 
-        // Get shuffle question by category
-        response = await axios({
-            method: 'GET',
-            url: findUrl,
-        });
-        question = response.data.data;
-
-        res.status(200).redirect(`/${question.slug}`);
+            // Get shuffle question by category
+            response = await axios({
+                method: 'GET',
+                url: findUrl,
+            });
+            question = response.data.data;
+            return res.status(200).redirect(`/${question.slug}`);
+        };
+        res.status(200).redirect(`/${question.slug}`)
     } catch (err) {
         throw new Error(err.message);
     }
