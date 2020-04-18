@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    title Tickgame
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="css/style.css")
+  body
+    .wrapper.d-flex.align-items-stretch
+      nav#sidebar.active
+        .custom-menu
+          button#sidebarCollapse.btn.btn-primary(type="button")
+            i.fa.fa-bars
+            span.sr-only Toggle Menu
+        .p-4.pt-5
+          h1
+            a.logo(href="#") Welcome
+          ul.list-unstyled.components.mb-5
+            li
+              a(href="#") Logout
+            li.active
+              a.dropdown-toggle(href="#homeSubmenu" data-toggle="collapse" aria-expanded="false") Category
+              ul#homeSubmenu.collapse.list-unstyled
+                li
+                  a(href="#") Group 1
+                li
+                  a(href="#") Group 2
+                li
+                  a(href="#") Group 3
+          .footer
+            p
+              // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+              | Copyright ©
+              script.
+                document.write(new Date().getFullYear());
+              |  All rights reserved | Wisarut Tiyamanee
+      // Page Content
+      #content.p-4.p-md-5.pt-5
+        h2.mb-4 Tickgame
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    script(src="/js/jquery.min.js")
+    script(src="/js/popper.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/main.js")
+
