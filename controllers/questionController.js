@@ -104,9 +104,16 @@ exports.deleteAllQuestions = async (req, res, next) => {
 
 exports.shuffleQuestion = async (req, res, next) => {
   try {
-    const {
-      category
-    } = req.body;
+    const slug = req.params.slug;
+    let category = '';
+
+    if (slug === 'healthy-eating') {
+      category = 'Healthy Eating'
+    } else if (slug === 'english-vocabulary') {
+      category = 'English Vocabulary'
+    } else if (slug === 'climate-action') {
+      category = 'Climate Action';
+    };
 
     const questions = await Question.find({
       category

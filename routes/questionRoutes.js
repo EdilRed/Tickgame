@@ -9,7 +9,7 @@ router
   .get(questionController.getAllQuestions)
   .delete(questionController.deleteAllQuestions);
 
-router.get('/shuffle', questionController.shuffleQuestion);
+router.get('/shuffle/:slug', questionController.shuffleQuestion);
 
 router
   .route('/:id')

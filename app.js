@@ -40,12 +40,12 @@ app.use('/', viewRouter)
 app.use('/api/users', userRouter);
 app.use('/api/questions', questionRouter);
 
-app.all('*', (req, res, next) => {
-    res.status(404).json({
-        status: 'error',
-        message: `Can't find ${req.originalUrl} on this server!`,
-    });
-    throw new Error(`Can't find ${req.originalUrl} on this server!`);
-});
+// app.all('*', (req, res, next) => {
+//     res.status(404).json({
+//         status: 'error',
+//         message: `Can't find ${req.originalUrl} on this server!`,
+//     });
+//     throw new Error(`Can't find ${req.originalUrl} on this server!`);
+// });
 
 module.exports = app;
