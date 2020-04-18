@@ -7,7 +7,7 @@ exports.getOverview = async (req, res, next) => {
     try {
         const records = await Record.find();
         const coin = records[records.length - 1];
-        res.status(200).render('base', {
+        res.status(200).render('overview', {
             coin,
         });
     } catch (err) {
